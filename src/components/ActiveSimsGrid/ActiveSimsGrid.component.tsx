@@ -3,7 +3,7 @@
 import { useMantineColorScheme } from "@mantine/core";
 
 export function ActiveSimsGrid() {
-  const { colorScheme } = useMantineColorScheme(); // Get the current color scheme
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <div className="grid grid-cols-4 gap-4">
