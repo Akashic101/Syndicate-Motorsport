@@ -14,6 +14,13 @@ const config: Config = {
       mantineColors: colors,
     }),
   ],
+  theme: {
+    extend: {
+      colors: {
+        SynBlue: "#0dc6c6",
+      },
+    },
+  },
   plugins: [],
 };
 export default config;
