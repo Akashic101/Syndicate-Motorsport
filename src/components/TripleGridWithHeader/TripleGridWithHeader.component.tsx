@@ -1,42 +1,34 @@
-import { Title, Text } from "@mantine/core";
+import { Title } from "@mantine/core";
+import { TablerIcon } from "@tabler/icons-react";
+import { GridItem } from "../GridItem/GridItem.component";
 
-export function TripleGridWithHeader() {
+type TripleGridWithHeaderProps = {
+  headerTitle: string;
+  gridItems: {
+    Icon: TablerIcon;
+    title: string;
+    description: string;
+  }[];
+};
+
+export function TripleGridWithHeader({
+  headerTitle,
+  gridItems,
+}: TripleGridWithHeaderProps) {
   return (
     <div className="p-12 bg-SynBlue">
-      <Title className="text-gray-900 pb-16 text-5xl text-center w-full">
-        Why race here?
+      <Title className="text-white pb-16 text-5xl text-center w-full">
+        {headerTitle}
       </Title>
       <div className="grid grid-cols-3 gap-4">
-        <div className="flex justify-center items-center">
-          <div>
-            <Title className="text-3xl text-center w-full text-gray-900">
-              Weekly Races and Leagues
-            </Title>
-            <Text className="text-center text-gray-900">
-              Get on track as often as you like.
-            </Text>
-          </div>
-        </div>
-        <div className="flex justify-center items-center">
-          <div>
-            <Title className="text-3xl text-center w-full text-gray-900">
-              ELO and Safety Ratings
-            </Title>
-            <Text className="text-center text-gray-900">
-              Increase your skill and safety racing with each event.
-            </Text>
-          </div>
-        </div>
-        <div className="flex justify-center items-center">
-          <div>
-            <Title className="text-3xl text-center w-full text-gray-900">
-              All skill levels
-            </Title>
-            <Text className="text-center text-gray-900">
-              We welcome drivers of all abilities and controllers
-            </Text>
-          </div>
-        </div>
+        {gridItems.map((item, index) => (
+          <GridItem
+            key={index}
+            Icon={item.Icon}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
       </div>
     </div>
   );

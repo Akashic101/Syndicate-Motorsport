@@ -6,6 +6,7 @@ import {
   Title,
   BackgroundImage,
 } from "@mantine/core";
+import { IconChevronsDown } from "@tabler/icons-react";
 
 export function HeroHeader() {
   return (
@@ -22,13 +23,17 @@ export function HeroHeader() {
           Join our weekly races and become part of an active, passionate
           community. Enjoy custom skill and safety ratings as you compete in
           thrilling races across three exciting games: Assetto Corsa, Assetto
-          Corsa Evo, and Richard Burns Rallye. Whether you're a seasoned driver
-          or just starting out, there's always a race waiting for you!
+          Corsa Evo, and Richard Burns Rallye. Whether you&apos;re a seasoned
+          driver or just starting out, there&apos;s always a race waiting for
+          you!
         </Text>
 
         <Button className="bg-SynBlue mt-12" size="xl" radius="xl">
           Join our Discord
         </Button>
+        <div className="absolute inset-x-0 bottom-8 flex justify-center">
+          <IconChevronsDown size={64} stroke={1.5} className="text-white" />
+        </div>
       </Container>
     </BackgroundImage>
   );
