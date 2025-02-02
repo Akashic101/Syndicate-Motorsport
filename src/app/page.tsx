@@ -1,9 +1,7 @@
 import { ActiveSimsGrid } from "@/components/ActiveSimsGrid/ActiveSimsGrid.component";
-import DriverProfileCard from "@/components/DriverProfileCard/DriverProfileCard.component";
-import { EventCalender } from "@/components/EventCalender/EventCalender.component";
+import EventCalendar from "@/components/EventCalender/EventCalender.component";
 import { HeroHeader } from "@/components/HeroHeader/HeroHeader.component";
 import { TripleGridWithHeader } from "@/components/TripleGridWithHeader/TripleGridWithHeader.component";
-import { AppShell, AppShellMain } from "@mantine/core";
 import {
   IconCalendarStats,
   IconCalendarWeek,
@@ -62,7 +60,7 @@ export default function Home() {
         headerTitle="Our experience"
         gridItems={discordStats}
       />
-      <EventCalender />
+      <EventCalendar />
     </>
   );
 }
