@@ -1,9 +1,9 @@
 import { ActiveSimsGrid } from "@/components/ActiveSimsGrid/ActiveSimsGrid.component";
+import DriverProfileCard from "@/components/DriverProfileCard/DriverProfileCard.component";
 import { EventCalender } from "@/components/EventCalender/EventCalender.component";
-import { Header } from "@/components/Header/Header.component";
 import { HeroHeader } from "@/components/HeroHeader/HeroHeader.component";
 import { TripleGridWithHeader } from "@/components/TripleGridWithHeader/TripleGridWithHeader.component";
-import { AppShell, AppShellHeader, AppShellMain } from "@mantine/core";
+import { AppShell, AppShellMain } from "@mantine/core";
 import {
   IconCalendarStats,
   IconCalendarWeek,
@@ -51,23 +51,18 @@ const discordStats = [
 
 export default function Home() {
   return (
-    <AppShell header={{ height: 60 }} padding="md">
-      <AppShellHeader>
-        <Header />
-      </AppShellHeader>
-      <AppShellMain className="p-0">
-        <HeroHeader />
-        <TripleGridWithHeader
-          headerTitle="Why race here?"
-          gridItems={reasonsGrid}
-        />
-        <ActiveSimsGrid />
-        <TripleGridWithHeader
-          headerTitle="Our experience"
-          gridItems={discordStats}
-        />
-        <EventCalender />
-      </AppShellMain>
-    </AppShell>
+    <>
+      <HeroHeader />
+      <TripleGridWithHeader
+        headerTitle="Why race here?"
+        gridItems={reasonsGrid}
+      />
+      <ActiveSimsGrid />
+      <TripleGridWithHeader
+        headerTitle="Our experience"
+        gridItems={discordStats}
+      />
+      <EventCalender />
+    </>
   );
 }

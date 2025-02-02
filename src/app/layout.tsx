@@ -5,11 +5,16 @@ import {
   DEFAULT_THEME,
   MantineProvider,
   mergeMantineTheme,
+  AppShell,
+  AppShellHeader,
+  AppShellFooter,
+  AppShellMain,
 } from "@mantine/core";
 import localFont from "next/font/local";
 import Head from "next/head";
 import "./globals.css";
 import { breakpoints, colors } from "./theme";
+import { Header } from "@/components/Header/Header.component";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,7 +53,15 @@ export default function RootLayout({
         <ColorSchemeScript />
       </Head>
       <body className="antialiased">
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <AppShell header={{ height: 60 }} footer={{ height: 50 }}>
+            <AppShellHeader>
+              <Header />
+            </AppShellHeader>
+
+            <AppShellMain>{children}</AppShellMain>
+          </AppShell>
+        </MantineProvider>
       </body>
     </html>
   );
